@@ -6,10 +6,10 @@ class Review extends StatelessWidget{
 
   String pathImage = "assets/img/a_person.jfif";
   String name = "Varuna Yasas";
-  String details = "Wjskndkasjdhkasjdhaskjdhaskjdh";
+  String comment = "asdasdasdasdasdasdasdas";
   int photosCount = 5;
   int reviewCount = 1;
-  Review(this.pathImage);
+  Review(this.name, this.comment, this.photosCount, this.reviewCount);
 
   final star_empty = getStar(Icons.star_border);
   final star_half = getStar(Icons.star_half);
@@ -17,20 +17,19 @@ class Review extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+
     final userInfo = Container(
-      margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 20.0),
+      margin: EdgeInsets.only(left: 20.0),
       child: Row(
         children: [
-          Text("$reviewCount reviews . $photosCount photos"),
-          Row(
-            children: [
-              star,
-              star,
-              star,
-              star,
-              star,
-            ],
-          )
+          Text("$reviewCount reviews - $photosCount photos",
+            style: TextStyle(
+                fontSize: 12.0,
+                fontFamily: "Lato"
+            ),
+          ),
+
         ],
       ),
     );
@@ -41,7 +40,7 @@ class Review extends StatelessWidget{
       ),
 
       child: Text(
-        details,
+        comment,
         textAlign: TextAlign.left,
         style: TextStyle(
           fontFamily: "Lato",
@@ -61,20 +60,22 @@ class Review extends StatelessWidget{
         style: TextStyle(
             fontFamily: "Lato",
             fontWeight: FontWeight.w900,
-            fontSize: 16.0
+            fontSize: 17.0
         ),
       )
     );
 
 
-    final userDetails = Column(
-      crossAxisAlignment: CrossAxisAlignment.start, // Alinear al inicio
-      children: [
-        userName,
-        userInfo,
-        userComment
-      ],
+    final userDetails = Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start, // Alinear al inicio
+        children: [
+          userName,
+          userInfo,
+          userComment
+        ],
 
+      ),
     );
 
 
@@ -97,10 +98,7 @@ class Review extends StatelessWidget{
     );
 
     return Row(
-      children: [
-        photo,
-        userDetails
-      ],
+      children: [photo, userDetails],
     );
   }
 

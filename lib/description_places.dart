@@ -76,7 +76,6 @@ class DescriptionPlace extends StatelessWidget{
       children: [
         titleStars,
         description
-
       ],
     );
 
