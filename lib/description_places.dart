@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'stars.dart';
+import 'purple_button.dart';
 
 class DescriptionPlace extends StatelessWidget{
 
@@ -73,9 +74,11 @@ class DescriptionPlace extends StatelessWidget{
     );
 
     final titleAndDesc = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         titleStars,
-        description
+        description,
+        PurpleButton("Navigate")
       ],
     );
 
