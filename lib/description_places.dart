@@ -12,19 +12,19 @@ class DescriptionPlace extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    final description =Container(
+    final description = Container(
       margin: EdgeInsets.only(
           top: 20.0,
           left: 20.0,
           right: 20.0
       ),
-      child: Text(descriptionPlace,
-
+      child: Text(
+        descriptionPlace,
         style: const TextStyle(
+            fontFamily: "Lato",
             color: Color(0xFF56575a),
             fontSize: 16.0,
-            fontWeight: FontWeight.bold
-        ),
+            fontWeight: FontWeight.bold),
       ),
     );
 
@@ -48,7 +48,8 @@ class DescriptionPlace extends StatelessWidget{
             namePlace,
             style: TextStyle(
               fontSize: 30.0,
-              fontWeight: FontWeight.w900
+              fontWeight: FontWeight.w900,
+              fontFamily: "Lato",
             ),
               textAlign: TextAlign.left,
           ),
