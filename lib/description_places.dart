@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget{
+
+  String namePlace;
+  int stars;
+  String descriptionPlace;
+
+  DescriptionPlace(this.namePlace, this.stars, this.descriptionPlace);
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -10,11 +18,7 @@ class DescriptionPlace extends StatelessWidget{
           left: 20.0,
           right: 20.0
       ),
-      child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing"
-          " elit. Curabitur blandit eu lectus vitae auctor. Nunc rhoncus, leo nec "
-          "malesuada consectetur, lorem est convallis orci, non pulvinar felis "
-          "magna vitae arcu. Nulla suscipit consequat lectus, eu efficitur ante "
-          "egestas nec. Morbi ipsum erat, tempor vel est eget, blandit blandit sem",
+      child: Text(descriptionPlace,
 
         style: const TextStyle(
             color: Color(0xFF56575a),
@@ -24,19 +28,9 @@ class DescriptionPlace extends StatelessWidget{
       ),
     );
 
-
-
-    final star = Container(
-      margin: EdgeInsets.only(
-        top:323.0,
-        right: 3.0,
-      ),
-
-      child: Icon(
-        Icons.star,
-        color: Color(0xFFF2C611),
-      ),
-    );
+    final star_empty = getStar(Icons.star_border);
+    final star_half = getStar(Icons.star_half);
+    final star = getStar(Icons.star);
 
     final titleStars = Row(
 
@@ -51,7 +45,7 @@ class DescriptionPlace extends StatelessWidget{
           ),
 
           child: Text(
-            "Duwili Ella",
+            namePlace,
             style: TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.w900
@@ -66,8 +60,8 @@ class DescriptionPlace extends StatelessWidget{
             star,
             star,
             star,
-            star,
-            star,
+            star_half,
+            star_empty,
 
           ],
         )
@@ -86,5 +80,21 @@ class DescriptionPlace extends StatelessWidget{
 
     return titleAndDesc;
   }
+
+}
+
+Widget getStar(IconData icon){
+
+  return Container(
+    margin: EdgeInsets.only(
+      top:323.0,
+      right: 3.0,
+    ),
+
+    child: Icon(
+      icon,
+      color: Color(0xFFF2C611),
+    ),
+  );
 
 }
