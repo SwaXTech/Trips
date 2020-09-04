@@ -77,6 +77,11 @@ flutter:
 
   assets:
     - assets/img/a_person.jfif
+    - assets/img/cave.jpg
+    - assets/img/lake.jpg
+    - assets/img/mountain.jpg
+    - assets/img/river.jpg
+    - assets/img/sea.jpg
 
 
   fonts:
