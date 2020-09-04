@@ -4,17 +4,27 @@ class DescriptionPlace extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    final description = Text("Lorem ipsum dolor sit amet, consectetur adipiscing"
-        " elit. Curabitur blandit eu lectus vitae auctor. Nunc rhoncus, leo nec "
-        "malesuada consectetur, lorem est convallis orci, non pulvinar felis "
-        "magna vitae arcu. Nulla suscipit consequat lectus, eu efficitur ante "
-        "egestas nec. Morbi ipsum erat, tempor vel est eget, blandit blandit sem",
+    final description =Container(
+      margin: EdgeInsets.only(
+          top: 20.0,
+          left: 20.0,
+          right: 20.0
+      ),
+      child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing"
+          " elit. Curabitur blandit eu lectus vitae auctor. Nunc rhoncus, leo nec "
+          "malesuada consectetur, lorem est convallis orci, non pulvinar felis "
+          "magna vitae arcu. Nulla suscipit consequat lectus, eu efficitur ante "
+          "egestas nec. Morbi ipsum erat, tempor vel est eget, blandit blandit sem",
 
-        style: TextStyle(
-          color: Colors.grey,
-          fontSize: 15.0
+        style: const TextStyle(
+            color: Color(0xFF56575a),
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold
         ),
+      ),
     );
+
+
 
     final star = Container(
       margin: EdgeInsets.only(
@@ -69,14 +79,8 @@ class DescriptionPlace extends StatelessWidget{
     final titleAndDesc = Column(
       children: [
         titleStars,
-        Container(
-          margin: EdgeInsets.only(
-            top: 15.0,
-            left: 20.0,
-            right: 40.0
-          ),
-          child: description,
-        )
+        description
+
       ],
     );
 
