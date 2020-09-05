@@ -1,16 +1,10 @@
-# trips_app
+# Trips App
 
-Platzi course
+Aplicación hecha utilizando el framework flutter como parte del curso de Flutter de Platzi.
 
-## Getting Started
+Hecho con el único propósito de aprender cómo se diseñan UI en Flutter.
 
-This project is a starting point for a Flutter application.
+No posee lógica de negocio.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<a href="https://ibb.co/SwszT8L"><img src="https://i.ibb.co/RTvqnm5/Screenshot-1599269048.png" alt="Screenshot-1599269048" border="0" class="center"></a>
