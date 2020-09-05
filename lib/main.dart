@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/trips.dart';
+import 'package:trips_app/trips_cupertino.dart';
 import 'description_places.dart';
 import 'review_list.dart';
 import 'header_appbar.dart';
