@@ -10,9 +10,9 @@ class ReviewList extends StatelessWidget{
 
       children: [
 
-        Review("Roberto Perez", "Sdjakjlsdhaskljdaslkd", 5 , 1),
-        Review("Pedro Gomez", "Sdjakjlsdhaskljdaslkd", 6 , 2),
-        Review("Ramiro Ramirez", "Sdjakjlsdhaskljdaslkd", 4 , 750),
+        Review("Roberto Perez", "Un excelente lugar", 5 , 1),
+        Review("Pedro Gomez", "Muy limpio", 6 , 2),
+        Review("Ramiro Ramirez", "Tremendo", 4 , 750),
 
       ],
     );
