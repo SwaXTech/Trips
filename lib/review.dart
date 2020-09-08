@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'circular_photo.dart';
 import 'stars.dart';
 
 
@@ -79,23 +80,7 @@ class Review extends StatelessWidget{
     );
 
 
-    final photo = Container(
-      margin: EdgeInsets.only(
-        top:20.0,
-        left:20.0
-      ),
-
-      width: 80.0,
-      height: 80.0,
-
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          fit: BoxFit.cover, //Siempre al centro
-          image: AssetImage(pathImage)
-        ),
-      ),
-    );
+    final photo = CircularPhoto(80, pathImage, 20);
 
     return Row(
       children: [photo, userDetails],
