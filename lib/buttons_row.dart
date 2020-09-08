@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'circle_button.dart';
+
 class ButtonsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -8,36 +10,11 @@ class ButtonsRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Spacer(),
-          FloatingActionButton(
-            backgroundColor: Colors.white38,
-            mini: true,
-            child: Icon(Icons.bookmark_border),
-          ),
-          Spacer(),
-          FloatingActionButton(
-            backgroundColor: Colors.white38,
-            mini: true,
-            child: Icon(Icons.notifications_active),
-          ),
-          Spacer(),
-          FloatingActionButton(
-            backgroundColor: Colors.white,
-            child: Icon(Icons.add, color: Colors.blue,),
-          ),
-          Spacer(),
-          FloatingActionButton(
-            backgroundColor: Colors.white38,
-            mini: true,
-            child: Icon(Icons.email),
-          ),
-          Spacer(),
-          FloatingActionButton(
-            backgroundColor: Colors.white38,
-            mini: true,
-            child: Icon(Icons.person),
-          ),
-          Spacer(),
+          CircleButton(true, Icons.turned_in_not, Colors.white38),
+          CircleButton(true, Icons.card_travel, Colors.white38),
+          CircleButton.withAnotherIconColor(false, Icons.add, Colors.white, Color(0xFF4268D3)),
+          CircleButton(true, Icons.mail, Colors.white38),
+          CircleButton(true, Icons.person, Colors.white38)
         ],
       ),
     );
