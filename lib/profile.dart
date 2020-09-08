@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/profile_info.dart';
 
+import 'buttons_row.dart';
 import 'gradient.dart';
 
 class ProfileTrips extends StatelessWidget{
@@ -10,6 +11,7 @@ class ProfileTrips extends StatelessWidget{
       children: [
         GradientBack("Perfil", 460.0),
         ProfileInfo("Pathum Tzoo", "pathumtzoo1@gmail.com", 'assets/img/a_person.jfif'),
+        ButtonsRow(),
       ],
     );
   }
