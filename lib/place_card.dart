@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:trips_app/floating_action_button_green.dart';
 
 class PlaceCard extends StatelessWidget {
+
+
+  String path;
+  String name;
+  String desc;
+  String steps;
+
+  PlaceCard(this.name, this.desc, this.steps, this.path);
+
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -15,7 +25,7 @@ class PlaceCard extends StatelessWidget {
             shape: BoxShape.rectangle,
             image: DecorationImage(
                 fit: BoxFit.cover, //Siempre al centro
-                image: AssetImage('assets/img/mountain.jpg')),
+                image: AssetImage(path)),
           ),
         ),
         Container(
@@ -39,7 +49,7 @@ class PlaceCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Knuckles Mountains Range",
+                      name,
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w900,
@@ -48,7 +58,7 @@ class PlaceCard extends StatelessWidget {
                     ),
                     Spacer(),
 
-                    Text("Hiking, Water fall hunting, Natural bath, Scenery & Photograpy",
+                    Text(desc,
                     style: TextStyle(
                       color: Colors.black26,
                       fontFamily: 'Lato',
@@ -56,7 +66,7 @@ class PlaceCard extends StatelessWidget {
                     ),
                     ),
                     Spacer(),
-                    Text("Steps 123,123,123",
+                    Text(steps,
                     style: TextStyle(
                       color: Colors.orange,
                       fontSize: 16.0,

@@ -14,8 +14,19 @@ class ProfileTrips extends StatelessWidget{
         ProfileInfo("Pathum Tzoo", "pathumtzoo1@gmail.com", 'assets/img/a_person.jfif'),
         ButtonsRow(),
         Container(
-          margin: EdgeInsets.only(top: 270),
-          child: PlaceCard(),
+          margin: EdgeInsets.only(top: 340),
+          child: ListView(
+            controller: ScrollController(
+              initialScrollOffset: 80.0
+            ),
+            children: [
+              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/mountain.jpg"),
+              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/mountain.jpg"),
+              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/mountain.jpg"),
+              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/mountain.jpg"),
+              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/mountain.jpg"),
+            ],
+          ),
         ),
       ],
     );
