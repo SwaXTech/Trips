@@ -29,7 +29,7 @@ class ProfileInfo extends StatelessWidget {
       child: Text(
         email,
         style: TextStyle(
-            color: Colors.white24,
+            color: Colors.white30,
             fontSize: 16.0,
             fontFamily: 'Lato'
         ),
@@ -37,7 +37,7 @@ class ProfileInfo extends StatelessWidget {
     );
 
     final info = Container(
-      margin: EdgeInsets.only(top: 35.0),
+      margin: EdgeInsets.only(top: 40.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -48,7 +48,7 @@ class ProfileInfo extends StatelessWidget {
     );
 
     return Container(
-      margin: EdgeInsets.only(top: 80.0),
+      margin: EdgeInsets.symmetric(vertical: 80, horizontal: 0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
