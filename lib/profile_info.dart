@@ -18,7 +18,7 @@ class ProfileInfo extends StatelessWidget {
         name,
         style: TextStyle(
             color: Colors.white,
-            fontSize: 18.0,
+            fontSize: 19.0,
             fontFamily: 'Lato'
         ),
       ),
@@ -30,7 +30,7 @@ class ProfileInfo extends StatelessWidget {
         email,
         style: TextStyle(
             color: Colors.white24,
-            fontSize: 15.0,
+            fontSize: 16.0,
             fontFamily: 'Lato'
         ),
       ),
@@ -48,7 +48,7 @@ class ProfileInfo extends StatelessWidget {
     );
 
     return Container(
-      margin: EdgeInsets.only(top: 120.0),
+      margin: EdgeInsets.only(top: 80.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

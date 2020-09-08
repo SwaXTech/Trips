@@ -4,7 +4,9 @@ class GradientBack extends StatelessWidget{
 
   String title = "Popular";
   double height = 250;
+  var alignment = Alignment(-0.9, -0.6);
 
+  GradientBack.withAlighment(this.title, this.height, this.alignment);
   GradientBack(this.title, this.height);
 
   @override
@@ -36,7 +38,7 @@ class GradientBack extends StatelessWidget{
         ),
       ),
 
-      alignment: Alignment(-0.9, -0.6),
+      alignment: alignment,
 
     );
   }

@@ -10,11 +10,11 @@ class ProfileTrips extends StatelessWidget{
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        GradientBack("Perfil", 460.0),
+        GradientBack.withAlighment("Profile", 460.0, Alignment(-0.9, -0.8)),
         ProfileInfo("Pathum Tzoo", "pathumtzoo1@gmail.com", 'assets/img/a_person.jfif'),
         ButtonsRow(),
         Container(
-          margin: EdgeInsets.only(top: 340),
+          margin: EdgeInsets.only(top: 300),
           child: ListView(
             controller: ScrollController(
               initialScrollOffset: 80.0

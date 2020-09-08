@@ -4,7 +4,7 @@ class ButtonsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 250),
+      margin: EdgeInsets.only(top: 210),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
