@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/floating_action_button_green.dart';
+import 'package:trips_app/place.dart';
 
 class PlaceCard extends StatelessWidget {
 
 
+  Place place;
   String path;
-  String name;
-  String desc;
-  String steps;
 
-  PlaceCard(this.name, this.desc, this.steps, this.path);
+  PlaceCard(this.place, this.path);
 
 
   @override
@@ -49,7 +48,7 @@ class PlaceCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      name,
+                      place.name,
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w900,
@@ -58,7 +57,7 @@ class PlaceCard extends StatelessWidget {
                     ),
                     Spacer(),
 
-                    Text(desc,
+                    Text(place.type,
                     style: TextStyle(
                       color: Colors.black26,
                       fontFamily: 'Lato',
@@ -66,10 +65,10 @@ class PlaceCard extends StatelessWidget {
                     ),
                     ),
                     Spacer(),
-                    Text(steps,
+                    Text("Steps ${place.steps}",
                     style: TextStyle(
-                      color: Colors.orange,
-                      fontSize: 16.0,
+                      color: Colors.amber,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.bold
                     ),),
 

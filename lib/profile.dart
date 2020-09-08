@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trips_app/place.dart';
 import 'package:trips_app/place_card.dart';
 import 'package:trips_app/profile_info.dart';
 
@@ -23,11 +24,12 @@ class ProfileTrips extends StatelessWidget{
               initialScrollOffset: 80.0
             ),
             children: [
-              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/mountain.jpg"),
-              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/cave.jpg"),
-              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/lake.jpg"),
-              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/river.jpg"),
-              PlaceCard("Knuckles Mountains Range", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "Steps 123,123,123", "assets/img/sea.jpg"),
+              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/mountain.jpg"),
+              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/cave.jpg"),
+              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/lake.jpg"),
+              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/river.jpg"),
+              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/sea.jpg"),
+
             ],
           ),
         ),
