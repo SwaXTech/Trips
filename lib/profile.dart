@@ -8,9 +8,12 @@ import 'gradient.dart';
 class ProfileTrips extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Stack(
       children: [
-        GradientBack.withAlighment("Profile", 460.0, Alignment(-0.9, -0.8)),
+        GradientBack.withAlighment("Profile", screenHeight * 0.45, Alignment(-0.9, -0.8)),
         ProfileInfo("Pathum Tzoo", "pathumtzoo1@gmail.com", 'assets/img/a_person.jfif'),
         ButtonsRow(),
         Container(
