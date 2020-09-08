@@ -20,6 +20,10 @@ class CircularPhoto extends StatelessWidget{
       height: size,
 
       decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.white,
+          width: 3.0
+        ),
         shape: BoxShape.circle,
         image: DecorationImage(
             fit: BoxFit.cover, //Siempre al centro
