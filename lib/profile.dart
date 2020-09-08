@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'gradient.dart';
+
 class ProfileTrips extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.lightGreenAccent
+    return Stack(
+      children: [
+        GradientBack("Perfil", 460.0)
+      ],
     );
   }
 
