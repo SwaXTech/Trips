@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/User/bloc/bloc_user.dart';
+import 'package:trips_app/User/ui/screens/sign_in.dart';
 import 'package:trips_app/trips.dart';
 import 'package:trips_app/trips_cupertino.dart';
 import 'Place/ui/widgets/description_places.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Trips(),
+        home: SignIn(),
       ),
     );
   }
