@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/home_trip.dart';
-import 'package:trips_app/profile.dart';
-import 'package:trips_app/search.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/Place/ui/screens/home_trip.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/User/ui/screens/profile.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/Place/ui/screens/search.dart';
 
 class Trips extends StatefulWidget{
   @override

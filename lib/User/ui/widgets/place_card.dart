@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/floating_action_button_green.dart';
-import 'package:trips_app/place.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/widgets/floating_action_button_green.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/Place/model/place.dart';
 
 class PlaceCard extends StatelessWidget {
 
