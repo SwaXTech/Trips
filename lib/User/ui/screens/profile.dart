@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/place.dart';
-import 'package:trips_app/place_card.dart';
-import 'package:trips_app/profile_info.dart';
+import 'package:trips_app/User/ui/screens/profile_info.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/Place/model/place.dart';
+import 'package:trips_app/widgets/gradient.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/User/ui/widgets/place_card.dart';
 
-import 'buttons_row.dart';
-import 'gradient.dart';
+import '../widgets/buttons_row.dart';
 
 class ProfileTrips extends StatelessWidget{
   @override

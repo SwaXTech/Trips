@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trips_app/circular_photo.dart';
+import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/widgets/circular_photo.dart';
 
 class ProfileInfo extends StatelessWidget {
 

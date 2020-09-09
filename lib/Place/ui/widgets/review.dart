@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'circular_photo.dart';
-import 'stars.dart';
+import '../../../widgets/circular_photo.dart';
+import '../../../User/ui/widgets/stars.dart';
 
 
 class Review extends StatelessWidget{

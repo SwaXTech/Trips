@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/trips.dart';
 import 'package:trips_app/trips_cupertino.dart';
-import 'description_places.dart';
-import 'review_list.dart';
-import 'header_appbar.dart';
+import 'Place/ui/widgets/description_places.dart';
+import 'Place/ui/widgets/review_list.dart';
+import 'Place/ui/screens/header_appbar.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'stars.dart';
-import 'purple_button.dart';
+import '../../../User/ui/widgets/stars.dart';
+import '../../../widgets/purple_button.dart';
 
 class DescriptionPlace extends StatelessWidget{
 
