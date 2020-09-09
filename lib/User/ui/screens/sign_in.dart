@@ -5,7 +5,10 @@ import 'package:trips_app/User/bloc/bloc_user.dart';
 import 'package:trips_app/widgets/gradient.dart';
 import 'package:trips_app/widgets/green_button.dart';
 
+import '../../../trips.dart';
+
 class SignIn extends StatefulWidget{
+
   @override
   State<StatefulWidget> createState() {
     return _SignIn();
@@ -17,6 +20,18 @@ class _SignIn extends State<SignIn>{
 
   UserBloc user;
 
+  Widget _handleCurrentSession(){
+    return StreamBuilder(
+      stream: user.authStatus,
+      builder: (BuildContext context, AsyncSnapshot snapshot){
+        if(!snapshot.hasData || snapshot.hasError){
+          return signInGoogleUI();
+        }
+
+        return Trips();
+      },
+    );
+  }
 
   Widget signInGoogleUI(){
     return Scaffold(
@@ -57,7 +72,7 @@ class _SignIn extends State<SignIn>{
 
     user = BlocProvider.of(context);
 
-    return signInGoogleUI();
+    return _handleCurrentSession();
   }
 
 }

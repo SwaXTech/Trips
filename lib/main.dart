@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/User/bloc/bloc_user.dart';
@@ -8,7 +9,9 @@ import 'Place/ui/widgets/description_places.dart';
 import 'Place/ui/widgets/review_list.dart';
 import 'Place/ui/screens/header_appbar.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -16,6 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return BlocProvider(
       bloc: UserBloc(),
       child: MaterialApp(
