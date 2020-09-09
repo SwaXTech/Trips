@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/User/bloc/bloc_user.dart';
 import 'package:trips_app/widgets/gradient.dart';
 import 'package:trips_app/widgets/green_button.dart';
 
@@ -11,6 +14,9 @@ class SignIn extends StatefulWidget{
 }
 
 class _SignIn extends State<SignIn>{
+
+  UserBloc user;
+
 
   Widget signInGoogleUI(){
     return Scaffold(
@@ -31,7 +37,9 @@ class _SignIn extends State<SignIn>{
               ),
               GreenButton(
                 text: "Login With GMail",
-                onPressed: (){},
+                onPressed: (){                                // Only testing purposes
+                  user.signIn().then((UserCredential user) => print("El Usuario es ${user.user.displayName}"));
+                },
                 width: 300.0,
                 height: 50.0,
               ),
@@ -46,6 +54,9 @@ class _SignIn extends State<SignIn>{
 
   @override
   Widget build(BuildContext context) {
+
+    user = BlocProvider.of(context);
+
     return signInGoogleUI();
   }
 
