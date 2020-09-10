@@ -11,4 +11,6 @@ No posee lógica de negocio.
 Implementando lógica de negocio.
 
 
-<a href="https://ibb.co/SwszT8L"><img src="https://i.ibb.co/RTvqnm5/Screenshot-1599269048.png" alt="Screenshot-1599269048" border="0" class="center"></a>
+| HOME | PROFILE |
+|------|---------|
+<a href="https://ibb.co/SwszT8L"><img src="https://i.ibb.co/RTvqnm5/Screenshot-1599269048.png" alt="Screenshot-1599269048" border="0" class="center"></a>| <a href="https://ibb.co/q7BxjjN"><img src="https://i.ibb.co/djB7MMP/Screenshot-1599602968.png" alt="Screenshot-1599602968" border="0"></a>
