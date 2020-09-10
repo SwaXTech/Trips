@@ -25,5 +25,12 @@ class FirebaseAuthAPI {
 
   }
 
+  void signOut() async{
+
+    await _auth.signOut().then((value) => print("Logged Out"));
+    googleSignIn.signOut();
+
+  }
+
 
 }

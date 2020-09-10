@@ -13,10 +13,10 @@ class UserBloc implements Bloc{
   //Casos de Uso
 
   // 1 - Sign In
+  Future<UserCredential> signIn()=> _auth_repository.signInFirebase();
 
-  Future<UserCredential> signIn(){
-    return _auth_repository.signInFirebase();
-  }
+  // 2 - Sign Out
+  void signOut()=> _auth_repository.signOut();
 
   @override
   void dispose() {
