@@ -8,38 +8,68 @@ import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/User
 
 import '../widgets/buttons_row.dart';
 
-class ProfileTrips extends StatelessWidget{
-
+class ProfileTrips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Stack(
       children: [
-        GradientBack.withAlighment("Profile", screenHeight * 0.45, Alignment(-0.9, -0.8)),
+        GradientBack.withAlighment(
+            "Profile", screenHeight * 0.45, Alignment(-0.9, -0.8)),
         ProfileInfo(),
         ButtonsRow(),
         Container(
           margin: EdgeInsets.only(top: 300),
           child: ListView(
-            controller: ScrollController(
-              initialScrollOffset: 80.0
-            ),
+            controller: ScrollController(initialScrollOffset: 80.0),
             children: [
-              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/mountain.jpg"),
-              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/cave.jpg"),
-              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/lake.jpg"),
-              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/river.jpg"),
-              PlaceCard(Place("Knuckles Mountains Range", "UnLugar", "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy", "123,123,123"),"assets/img/sea.jpg"),
-
+              PlaceCard(Place(
+                  id: 'asd',
+                  name: "Knuckles Mountains Range",
+                  description:
+                      "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy",
+                  imageURL: "assets/img/mountain.jpg",
+                  likes: 6)),
+              PlaceCard(Place(
+                  id: 'asd',
+                  name: "Knuckles Mountains Range",
+                  description:
+                      "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy",
+                  imageURL: "assets/img/cave.jpg",
+                  likes: 6)),
+              PlaceCard(Place(
+                  id: 'asd',
+                  name: "Knuckles Mountains Range",
+                  description:
+                      "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy",
+                  imageURL: "assets/img/lake.jpg",
+                  likes: 6)),
+              PlaceCard(Place(
+                  id: 'asd',
+                  name: "Knuckles Mountains Range",
+                  description:
+                      "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy",
+                  imageURL: "assets/img/river.jpg",
+                  likes: 6)),
+              PlaceCard(Place(
+                  id: 'asd',
+                  name: "Knuckles Mountains Range",
+                  description:
+                      "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy",
+                  imageURL: "assets/img/sea.jpg",
+                  likes: 6)),
+              PlaceCard(Place(
+                  id: 'asd',
+                  name: "Knuckles Mountains Range",
+                  description:
+                      "Hiking, Water fall hunting, Natural bath, Scenery & Photograpy",
+                  imageURL: "assets/img/mountain.jpg",
+                  likes: 6)),
             ],
           ),
         ),
       ],
     );
   }
-
-
-
 }

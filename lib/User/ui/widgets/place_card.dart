@@ -6,9 +6,8 @@ class PlaceCard extends StatelessWidget {
 
 
   Place place;
-  String path;
 
-  PlaceCard(this.place, this.path);
+  PlaceCard(this.place);
 
 
   @override
@@ -24,7 +23,7 @@ class PlaceCard extends StatelessWidget {
             shape: BoxShape.rectangle,
             image: DecorationImage(
                 fit: BoxFit.cover, //Siempre al centro
-                image: AssetImage(path)),
+                image: AssetImage(place.imageURL)),
           ),
         ),
         Container(
@@ -57,7 +56,7 @@ class PlaceCard extends StatelessWidget {
                     ),
                     Spacer(),
 
-                    Text(place.type,
+                    Text(place.description,
                     style: TextStyle(
                       color: Colors.black26,
                       fontFamily: 'Lato',
@@ -65,7 +64,7 @@ class PlaceCard extends StatelessWidget {
                     ),
                     ),
                     Spacer(),
-                    Text("Steps ${place.steps}",
+                    Text("${place.likes == null? '0': place.likes} Likes",
                     style: TextStyle(
                       color: Colors.amber,
                       fontSize: 14.0,

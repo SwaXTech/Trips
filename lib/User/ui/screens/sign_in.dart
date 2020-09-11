@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:trips_app/User/model/user.dart' as usr;
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/User/bloc/bloc_user.dart';
@@ -52,8 +53,16 @@ class _SignIn extends State<SignIn>{
               ),
               GreenButton(
                 text: "Login With GMail",
-                onPressed: (){                                // Only testing purposes
-                  user.signIn().then((UserCredential user) => print("El Usuario es ${user.user.displayName}"));
+                onPressed: (){
+
+                  user.signIn().then((UserCredential userCredential) => user.updateUserData(
+                    usr.User(
+                      uid: userCredential.user.uid,
+                      email: userCredential.user.email,
+                      name: userCredential.user.displayName,
+                      photoURL: userCredential.user.photoURL,
+                    )
+                  ));
                 },
                 width: 300.0,
                 height: 50.0,
