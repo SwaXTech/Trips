@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/User/bloc/bloc_user.dart';
 import 'package:trips_app/User/ui/screens/profile_info.dart';
 import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/Place/model/place.dart';
 import 'package:trips_app/widgets/gradient.dart';
@@ -7,6 +9,7 @@ import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/User
 import '../widgets/buttons_row.dart';
 
 class ProfileTrips extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
 
@@ -15,7 +18,7 @@ class ProfileTrips extends StatelessWidget{
     return Stack(
       children: [
         GradientBack.withAlighment("Profile", screenHeight * 0.45, Alignment(-0.9, -0.8)),
-        ProfileInfo("Pathum Tzoo", "pathumtzoo1@gmail.com", 'assets/img/a_person.jfif'),
+        ProfileInfo(),
         ButtonsRow(),
         Container(
           margin: EdgeInsets.only(top: 300),

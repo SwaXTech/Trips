@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:trips_app/User/bloc/bloc_user.dart';
 import 'package:trips_app/User/ui/screens/sign_in.dart';
-import 'package:trips_app/trips.dart';
-import 'package:trips_app/trips_cupertino.dart';
-import 'Place/ui/widgets/description_places.dart';
-import 'Place/ui/widgets/review_list.dart';
-import 'Place/ui/screens/header_appbar.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
