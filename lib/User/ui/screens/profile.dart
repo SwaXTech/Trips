@@ -15,8 +15,10 @@ class ProfileTrips extends StatelessWidget {
 
     return Stack(
       children: [
-        GradientBack.withAlighment(
-            "Profile", screenHeight * 0.45, Alignment(-0.9, -0.8)),
+        GradientBack(
+            title: "Profile",
+            height: screenHeight * 0.45
+        ),
         ProfileInfo(),
         ButtonsRow(),
         Container(

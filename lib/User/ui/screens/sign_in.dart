@@ -34,47 +34,60 @@ class _SignIn extends State<SignIn>{
     );
   }
 
-  Widget signInGoogleUI(){
+  Widget signInGoogleUI() {
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
         children: [
-          GradientBack("", MediaQuery.of(context).size.height),
+          GradientBack(
+            height: null,
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Welcome \nThis is your Travel App",
-              style: TextStyle(
-                fontSize: 37.0,
-                fontFamily: 'Lato',
-                color: Colors.white,
-                fontWeight: FontWeight.bold
+              Flexible(
+                child: Container(
+                  width: screenWidth(),
+                  child: welcomeText(),
+                ),
               ),
-              ),
-              GreenButton(
-                text: "Login With GMail",
-                onPressed: (){
-
-                  user.signIn().then((UserCredential userCredential) => user.updateUserData(
-                    usr.User(
-                      uid: userCredential.user.uid,
-                      email: userCredential.user.email,
-                      name: userCredential.user.displayName,
-                      photoURL: userCredential.user.photoURL,
-                    )
-                  ));
-                },
-                width: 300.0,
-                height: 50.0,
-              ),
-
+              loginButton()
             ],
           ),
         ],
-
       ),
     );
   }
+
+  double screenWidth() => MediaQuery.of(context).size.width;
+
+  Widget welcomeText() => Container(
+    margin: EdgeInsets.only(left: 20.0),
+    child: Text(
+          "Welcome \nThis is your Travel App",
+          style: TextStyle(
+              fontSize: 37.0,
+              fontFamily: 'Lato',
+              color: Colors.white,
+              fontWeight: FontWeight.bold),
+        ),
+  );
+
+
+  Widget loginButton() => GreenButton(
+        text: "Login With GMail",
+        onPressed: () {
+          user.signIn().then(
+              (UserCredential userCredential) => user.updateUserData(usr.User(
+                    uid: userCredential.user.uid,
+                    email: userCredential.user.email,
+                    name: userCredential.user.displayName,
+                    photoURL: userCredential.user.photoURL,
+                  )));
+        },
+        width: 300.0,
+        height: 50.0,
+      );
 
   @override
   Widget build(BuildContext context) {
