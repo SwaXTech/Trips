@@ -27,7 +27,7 @@ class _AddPlaceState extends State<AddPlace> {
           GradientBack(height: 300),
           appBar(context),
           Container(
-            margin: EdgeInsets.only(top: 120, bottom: 20),
+            margin: EdgeInsets.only(top: 100.0, bottom: 20),
             child: buildListView(_titleController, _descController),
           ),
         ],
@@ -37,17 +37,21 @@ class _AddPlaceState extends State<AddPlace> {
 
   ListView buildListView(var _titleController, var _descController) => ListView(
         children: [
-          Container(
-            alignment: Alignment.center,
-            child: CardImage(
-              pathImage: 'assets/img/cave.jpg'/*widget.image.path*/, iconData: Icons.camera_alt, height: 250.0, width: 350.0, marginLeft: 0.0,
-            ),
-          ),
+          card(),
           titleTextField(_titleController),
           descriptionTextField(_descController),
           locationField(),
         ],
       );
+
+  Container card() {
+    return Container(
+          alignment: Alignment.center,
+          child: CardImage(
+            pathImage: 'assets/img/cave.jpg'/*widget.image.path*/, iconData: Icons.camera_alt, height: 250.0, width: 350.0, marginLeft: 0.0,
+          ),
+        );
+  }
 
   Container locationField() {
     return Container(
@@ -67,7 +71,7 @@ class _AddPlaceState extends State<AddPlace> {
       );
 
   Container titleTextField(TextEditingController _titleController) => Container(
-        margin: EdgeInsets.only(bottom: 20.0),
+        margin: EdgeInsets.only(top: 40.0, bottom: 20.0),
         child: TextInput(
           hintText: "Title",
           textInputType: null,
