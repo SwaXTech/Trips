@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:trips_app/Place/ui/widgets/card_image.dart';
 import 'package:trips_app/Place/ui/widgets/location_field.dart';
 import 'package:trips_app/widgets/gradient.dart';
+import 'package:trips_app/widgets/purple_button.dart';
 import 'package:trips_app/widgets/text_input.dart';
 import 'package:trips_app/widgets/title_header.dart';
 
@@ -41,7 +42,16 @@ class _AddPlaceState extends State<AddPlace> {
           titleTextField(_titleController),
           descriptionTextField(_descController),
           locationField(),
+          addPlaceButton(),
         ],
+      );
+
+  Container addPlaceButton() => Container(
+        width: 70.0,
+        child: PurpleButton(
+          buttonText: 'Add Place',
+          onPressed: () {},
+        ),
       );
 
   Container card() {
@@ -53,12 +63,10 @@ class _AddPlaceState extends State<AddPlace> {
         );
   }
 
-  Container locationField() {
-    return Container(
+  Container locationField() => Container(
           margin: EdgeInsets.only(top: 20.0),
           child: LocationField(hintText: "Add location", iconData: Icons.location_on),
         );
-  }
 
   Container descriptionTextField(TextEditingController _descController) =>
       Container(

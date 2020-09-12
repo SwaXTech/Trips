@@ -40,7 +40,7 @@ class _FloatingActionButtonGreen extends State<FloatingActionButtonGreen>{
       tooltip: "Fav",
       onPressed: widget.onPressed,
       child: Icon(
-        actualIcon
+        widget.iconData
       ),
     heroTag: null,
     );
