@@ -35,8 +35,9 @@ class _FloatingActionButtonGreen extends State<FloatingActionButtonGreen>{
       child: Icon(
         actualIcon
       ),
-
+    heroTag: null,
     );
+
   }
 
 }

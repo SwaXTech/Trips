@@ -26,8 +26,8 @@ class ButtonsRow extends StatelessWidget {
           CircleButton.withAnotherIconColor((){
             File image;
             Navigator.push(context, MaterialPageRoute(
-              builder: (BuildContext context) => AddPlace(image: )
-            ))
+              builder: (BuildContext context) => AddPlace(image: image)
+            ));
           }, false, Icons.add, Colors.white, Color(0xFF4268D3)),
           CircleButton(() => {user.signOut()}, true, Icons.exit_to_app, Colors.white38),
           //CircleButton(true, Icons.person, Colors.white38)

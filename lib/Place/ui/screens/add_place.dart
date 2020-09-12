@@ -4,8 +4,7 @@ import 'package:trips_app/widgets/gradient.dart';
 class AddPlace extends StatefulWidget {
 
   final image;
-  AddPlace({Key key, this.image})
-
+  AddPlace({Key key, this.image});
 
   @override
   _AddPlaceState createState() => _AddPlaceState();

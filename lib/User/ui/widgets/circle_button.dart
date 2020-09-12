@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CircleButton extends StatefulWidget{
 
+  static var tag = 0;
   final VoidCallback onPressed;
   bool mini;
   var icon;
@@ -31,6 +32,7 @@ class _CircleButton extends State<CircleButton> {
           widget.icon,
           color: widget.iconColor,
         ),
+        heroTag: CircleButton.tag++,
       ),
     );
   }
