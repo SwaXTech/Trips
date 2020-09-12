@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/Place/ui/screens/add_place.dart';
 import 'package:trips_app/User/bloc/bloc_user.dart';
 
 import 'circle_button.dart';
@@ -20,7 +23,12 @@ class ButtonsRow extends StatelessWidget {
         children: [
           //CircleButton(true, Icons.turned_in_not, Colors.white38),
           CircleButton(() => {}, true, Icons.vpn_key, Colors.white38),
-          CircleButton.withAnotherIconColor(() => {}, false, Icons.add, Colors.white, Color(0xFF4268D3)),
+          CircleButton.withAnotherIconColor((){
+            File image;
+            Navigator.push(context, MaterialPageRoute(
+              builder: (BuildContext context) => AddPlace(image: )
+            ))
+          }, false, Icons.add, Colors.white, Color(0xFF4268D3)),
           CircleButton(() => {user.signOut()}, true, Icons.exit_to_app, Colors.white38),
           //CircleButton(true, Icons.person, Colors.white38)
         ],
