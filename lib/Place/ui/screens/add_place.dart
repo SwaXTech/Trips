@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:trips_app/Place/model/place.dart';
 import 'package:trips_app/Place/ui/widgets/card_image.dart';
 import 'package:trips_app/Place/ui/widgets/location_field.dart';
+import 'package:trips_app/User/bloc/bloc_user.dart';
 import 'package:trips_app/widgets/gradient.dart';
 import 'package:trips_app/widgets/purple_button.dart';
 import 'package:trips_app/widgets/text_input.dart';
@@ -17,10 +20,13 @@ class AddPlace extends StatefulWidget {
 }
 
 class _AddPlaceState extends State<AddPlace> {
+  var _titleController = TextEditingController();
+  var _descController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final _titleController = TextEditingController();
-    final _descController = TextEditingController();
+
+    _titleController = TextEditingController();
+    _descController = TextEditingController();
 
     return Scaffold(
       body: Stack(
@@ -46,13 +52,26 @@ class _AddPlaceState extends State<AddPlace> {
         ],
       );
 
-  Container addPlaceButton() => Container(
+  Container addPlaceButton() {
+
+    UserBloc userBloc = BlocProvider.of(context);
+    return Container(
         width: 70.0,
         child: PurpleButton(
           buttonText: 'Add Place',
-          onPressed: () {},
+          onPressed: () {
+            userBloc.updatePlaceData(Place(
+              name: _titleController.text,
+              description: _descController.text,
+              likes: 0,
+            )).whenComplete(() {
+              print("TERMINO de subir PLACE");
+              Navigator.pop(context);
+            });
+          },
         ),
       );
+  }
 
   Container card() {
     return Container(
