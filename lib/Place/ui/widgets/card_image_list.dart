@@ -11,11 +11,11 @@ class CardImageList extends StatelessWidget{
         padding: EdgeInsets.all(25.0),
         scrollDirection: Axis.horizontal,
         children: [
-          CardImage("assets/img/cave.jpg"),
-          CardImage("assets/img/lake.jpg"),
-          CardImage("assets/img/mountain.jpg"),
-          CardImage("assets/img/river.jpg"),
-          CardImage("assets/img/sea.jpg"),
+          CardImage(pathImage: "assets/img/cave.jpg", iconData: Icons.favorite_border, height: 250, width: 350, marginLeft: 20,),
+          CardImage(pathImage: "assets/img/lake.jpg", iconData: Icons.favorite_border, height: 250, width: 350, marginLeft: 20),
+          CardImage(pathImage: "assets/img/mountain.jpg", iconData: Icons.favorite_border, height: 250, width: 350, marginLeft: 20),
+          CardImage(pathImage: "assets/img/river.jpg", iconData: Icons.favorite_border, height: 250, width: 350, marginLeft: 20),
+          CardImage(pathImage: "assets/img/sea.jpg", iconData: Icons.favorite_border, height: 250, width: 350, marginLeft: 20),
         ],
       ),
     );

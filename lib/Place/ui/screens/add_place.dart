@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trips_app/Place/ui/widgets/card_image.dart';
 import 'package:trips_app/Place/ui/widgets/location_field.dart';
 import 'package:trips_app/widgets/gradient.dart';
 import 'package:trips_app/widgets/text_input.dart';
@@ -36,7 +37,12 @@ class _AddPlaceState extends State<AddPlace> {
 
   ListView buildListView(var _titleController, var _descController) => ListView(
         children: [
-          Container(),
+          Container(
+            alignment: Alignment.center,
+            child: CardImage(
+              pathImage: 'assets/img/cave.jpg'/*widget.image.path*/, iconData: Icons.camera_alt, height: 250.0, width: 350.0, marginLeft: 0.0,
+            ),
+          ),
           titleTextField(_titleController),
           descriptionTextField(_descController),
           locationField(),
