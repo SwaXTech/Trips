@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trips_app/Place/ui/widgets/location_field.dart';
 import 'package:trips_app/widgets/gradient.dart';
 import 'package:trips_app/widgets/text_input.dart';
 import 'package:trips_app/widgets/title_header.dart';
@@ -38,8 +39,16 @@ class _AddPlaceState extends State<AddPlace> {
           Container(),
           titleTextField(_titleController),
           descriptionTextField(_descController),
+          locationField(),
         ],
       );
+
+  Container locationField() {
+    return Container(
+          margin: EdgeInsets.only(top: 20.0),
+          child: LocationField(hintText: "Add location", iconData: Icons.location_on),
+        );
+  }
 
   Container descriptionTextField(TextEditingController _descController) =>
       Container(
