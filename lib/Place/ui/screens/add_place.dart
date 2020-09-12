@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:trips_app/widgets/gradient.dart';
+import 'package:trips_app/widgets/text_input.dart';
 import 'package:trips_app/widgets/title_header.dart';
 
 class AddPlace extends StatefulWidget {
-
   final image;
+
   AddPlace({Key key, this.image});
 
   @override
@@ -15,46 +16,78 @@ class AddPlace extends StatefulWidget {
 class _AddPlaceState extends State<AddPlace> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final _titleController = TextEditingController();
+    final _descController = TextEditingController();
 
+    return Scaffold(
       body: Stack(
         children: [
           GradientBack(height: 300),
-          Row(
-            children: [
-              backArrow(context),
-              title(),
-            ],
-          )
+          appBar(context),
+          Container(
+            margin: EdgeInsets.only(top: 120, bottom: 20),
+            child: buildListView(_titleController, _descController),
+          ),
         ],
       ),
-
     );
   }
 
-  Flexible title() {
-    return Flexible(
-      child: Container(
-        padding: EdgeInsets.only(top: 35, left: 20, right: 10),
-        child: TitleHeader(title: "Add new place"),
-      ),
-    );
-  }
+  ListView buildListView(var _titleController, var _descController) => ListView(
+        children: [
+          Container(),
+          titleTextField(_titleController),
+          descriptionTextField(_descController),
+        ],
+      );
 
-  Container backArrow(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 25.0, left: 5.0),
-      child: SizedBox(
-        //Para que todo el área del boton sirva para clickear
-        height: 45,
-        width: 45,
-        child: IconButton(
-          icon: Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 45),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+  Container descriptionTextField(TextEditingController _descController) =>
+      Container(
+        child: TextInput(
+          hintText: "Description",
+          textInputType: TextInputType.multiline,
+          maxLines: 4,
+          textEditingController: _descController,
         ),
-      ),
-    );
-  }
+      );
+
+  Container titleTextField(TextEditingController _titleController) => Container(
+        margin: EdgeInsets.only(bottom: 20.0),
+        child: TextInput(
+          hintText: "Title",
+          textInputType: null,
+          maxLines: 1,
+          textEditingController: _titleController,
+        ),
+      );
+
+  Row appBar(BuildContext context) => Row(
+        children: [
+          backArrow(context),
+          title(),
+        ],
+      );
+
+  Flexible title() => Flexible(
+        child: Container(
+          padding: EdgeInsets.only(top: 35, left: 20, right: 10),
+          child: TitleHeader(title: "Add new place"),
+        ),
+      );
+
+  Container backArrow(BuildContext context) => Container(
+        padding: EdgeInsets.only(top: 25.0, left: 5.0),
+        child: SizedBox(
+          //Para que todo el área del boton sirva para clickear
+          height: 45,
+          width: 45,
+          child: IconButton(
+            icon:
+                Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 45),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      );
 }
