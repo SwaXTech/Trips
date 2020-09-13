@@ -8,7 +8,6 @@ class Place{
   String description;
   String imageURL;
   int likes = 0;
-  User owner;
 
   Place(
       {Key key,
@@ -16,6 +15,5 @@ class Place{
       @required this.name,
       @required this.description,
       @required this.imageURL,
-      @required this.likes,
-      @required this.owner});
+      @required this.likes});
 }

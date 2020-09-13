@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/widgets/floating_action_button_green.dart';
-import 'file:///C:/Users/AleeHerasimiuk/AndroidStudioProjects/trips_app/lib/Place/model/place.dart';
+import 'package:trips_app/Place/model/place.dart';
+import 'package:trips_app/widgets/floating_action_button_green.dart';
 
 class PlaceCard extends StatelessWidget {
   Place place;
@@ -42,7 +42,10 @@ class PlaceCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildTitle(),
+          Row(children: [
+            buildTitle(),
+            Spacer()
+          ],),
           Spacer(),
           buildDescription(),
           Spacer(),
@@ -99,7 +102,7 @@ class PlaceCard extends StatelessWidget {
         shape: BoxShape.rectangle,
         image: DecorationImage(
             fit: BoxFit.cover, //Siempre al centro
-            image: AssetImage(place.imageURL)),
+            image: NetworkImage(place.imageURL)),
       ),
     );
   }
