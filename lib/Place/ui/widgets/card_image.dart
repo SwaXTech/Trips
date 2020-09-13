@@ -46,5 +46,5 @@ class CardImage extends StatelessWidget {
       ];
 
   DecorationImage decorationImage() =>
-      DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage));
+      DecorationImage(fit: BoxFit.cover, image: NetworkImage(pathImage));
 }

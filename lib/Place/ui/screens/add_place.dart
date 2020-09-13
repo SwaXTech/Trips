@@ -77,7 +77,7 @@ class _AddPlaceState extends State<AddPlace> {
     return Container(
           alignment: Alignment.center,
           child: CardImage(
-            pathImage: 'assets/img/cave.jpg'/*widget.image.path*/, iconData: Icons.camera_alt, height: 250.0, width: 350.0, marginLeft: 0.0,
+            pathImage: widget.image.path, iconData: Icons.camera_alt, height: 250.0, width: 350.0, marginLeft: 0.0,
           ),
         );
   }
