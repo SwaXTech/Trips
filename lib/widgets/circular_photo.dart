@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class CircularPhoto extends StatelessWidget{
 
   double size;
-  String url;
+  ImageProvider imageProvider;
   double margin;
 
-  CircularPhoto(this.size, this.url, this.margin);
+  CircularPhoto(this.size, this.imageProvider, this.margin);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class CircularPhoto extends StatelessWidget{
         shape: BoxShape.circle,
         image: DecorationImage(
             fit: BoxFit.cover, //Siempre al centro
-            image: NetworkImage(url)
+            image: imageProvider
         ),
       ),
     );

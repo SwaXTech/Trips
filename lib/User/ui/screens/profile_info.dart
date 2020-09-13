@@ -65,7 +65,7 @@ class ProfileInfo extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircularPhoto(90.0, user.photoURL, 20),
+          CircularPhoto(90.0, NetworkImage(user.photoURL), 20),
           makeInfo(),
         ],
       ),

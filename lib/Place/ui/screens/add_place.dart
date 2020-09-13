@@ -62,6 +62,12 @@ class _AddPlaceState extends State<AddPlace> {
         child: PurpleButton(
           buttonText: 'Add Place',
           onPressed: () {
+
+            final currentUser = userBloc.currentUser;
+            if(currentUser != null){
+
+            }
+
             userBloc.updatePlaceData(Place(
               name: _titleController.text,
               description: _descController.text,

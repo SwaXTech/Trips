@@ -80,7 +80,7 @@ class Review extends StatelessWidget{
     );
 
 
-    final photo = CircularPhoto(80, pathImage, 20);
+    final photo = CircularPhoto(80, AssetImage(pathImage), 20);
 
     return Row(
       children: [photo, userDetails],
