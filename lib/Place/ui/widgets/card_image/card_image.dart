@@ -1,9 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:trips_app/widgets/floating_action_button_green.dart';
 
 class CardImage extends StatelessWidget {
 
-  final String pathImage;
+  final ImageProvider imageProvider;
   final double height;
   final double width;
   final VoidCallback onPressedFabIcon;
@@ -12,7 +14,7 @@ class CardImage extends StatelessWidget {
 
   CardImage(
       {Key key,
-      @required this.pathImage,
+      @required this.imageProvider,
       @required this.height,
       @required this.width,
       this.marginLeft,
@@ -46,5 +48,5 @@ class CardImage extends StatelessWidget {
       ];
 
   DecorationImage decorationImage() =>
-      DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage));
+      DecorationImage(fit: BoxFit.cover, image: imageProvider);
 }
