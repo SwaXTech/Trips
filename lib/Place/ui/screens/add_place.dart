@@ -65,32 +65,37 @@ class _AddPlaceState extends State<AddPlace> {
           onPressed: () {
 
             final currentUser = userBloc.currentUser;
-            if(currentUser != null){
-              String uid = currentUser.uid;
-              String path = "$uid/${DateTime.now().toString()}.jpg";
-              userBloc.uploadFile(path, widget.image).then((StorageUploadTask task){
-                task.onComplete.then((StorageTaskSnapshot snapshot){
-                  snapshot.ref.getDownloadURL().then((urlImage){
-                    print("URL Image: $urlImage");
-                    userBloc.updatePlaceData(Place(
-                      name: _titleController.text,
-                      description: _descController.text,
-                      likes: 0,
-                      imageURL: urlImage
-                    )).whenComplete(() {
-                      print("TERMINO de subir PLACE");
-                      Navigator.pop(context);
-                    });
-                  });
-                });
-              });
-            }
 
+            if(currentUser == null)
+              return;
 
+            String uid = currentUser.uid;
+            String path = _buildPath(uid);
+            userBloc.uploadFile(path, widget.image).then((StorageUploadTask fileUploaded) => _uploadPlaceData(fileUploaded));
           },
         ),
       );
   }
+
+  void _uploadPlaceData(fileUploaded) {
+    UserBloc userBloc = BlocProvider.of(context);
+    fileUploaded.onComplete.then((StorageTaskSnapshot snapshot) {
+      snapshot.ref.getDownloadURL().then((urlImage)
+        => userBloc.updatePlaceData(buildPlaceData(urlImage)).whenComplete(()
+          => Navigator.pop(context)));
+    });
+  }
+
+  Place buildPlaceData(urlImage) {
+    return Place(
+          name: _titleController.text,
+          description: _descController.text,
+          likes: 0,
+          imageURL: urlImage
+      );
+  }
+
+  String _buildPath(String uid) => "$uid/${DateTime.now().toString()}.jpg";
 
   Container card() {
     return Container(
