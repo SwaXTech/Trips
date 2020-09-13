@@ -25,15 +25,34 @@ class CloudFirestoreAPI{
   }
 
   Future<void> updatePlaceData(Place place) async {
-    CollectionReference refPlaces = _db.collection(PLACES);
-
+    CollectionReference placesReference = _db.collection(PLACES);
     final uid = _auth.currentUser.uid;
-    await refPlaces.add({
-      'name': place.name,
-      'description': place.description,
-      'likes': place.likes,
-      'userOwner': '$USERS/$uid', //Referencia
-      'imageURL': place.imageURL,
+    await placesReference.add(_placeFields(place, uid)).then((DocumentReference placeReference) => _insertPlaceInUserReference(placeReference, uid));
+  }
+
+  void _insertPlaceInUserReference(DocumentReference placeReference, String uid){
+      placeReference.get().then((DocumentSnapshot snapshot){
+        DocumentReference userReference = _getUserReference(uid);
+        _addArrayToUserPlaces(userReference, snapshot);
+      });
+  }
+
+  void _addArrayToUserPlaces(DocumentReference userReference, DocumentSnapshot snapshot) {
+    userReference.update({
+      'myPlaces': FieldValue.arrayUnion([_db.doc('$PLACES/${snapshot.id}')])
     });
+  }
+
+  DocumentReference _getUserReference(String uid) => _db.collection(USERS).doc(uid);
+
+
+  Map<String, dynamic> _placeFields(Place place, String uid) {
+    return {
+    'name': place.name,
+    'description': place.description,
+    'likes': place.likes,
+    'userOwner': _db.doc('$USERS/$uid'), //Referencia
+    'imageURL': place.imageURL,
+  };
   }
 }
