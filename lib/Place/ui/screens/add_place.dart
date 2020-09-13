@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
@@ -65,17 +66,27 @@ class _AddPlaceState extends State<AddPlace> {
 
             final currentUser = userBloc.currentUser;
             if(currentUser != null){
-
+              String uid = currentUser.uid;
+              String path = "$uid/${DateTime.now().toString()}.jpg";
+              userBloc.uploadFile(path, widget.image).then((StorageUploadTask task){
+                task.onComplete.then((StorageTaskSnapshot snapshot){
+                  snapshot.ref.getDownloadURL().then((urlImage){
+                    print("URL Image: $urlImage");
+                    userBloc.updatePlaceData(Place(
+                      name: _titleController.text,
+                      description: _descController.text,
+                      likes: 0,
+                      imageURL: urlImage
+                    )).whenComplete(() {
+                      print("TERMINO de subir PLACE");
+                      Navigator.pop(context);
+                    });
+                  });
+                });
+              });
             }
 
-            userBloc.updatePlaceData(Place(
-              name: _titleController.text,
-              description: _descController.text,
-              likes: 0,
-            )).whenComplete(() {
-              print("TERMINO de subir PLACE");
-              Navigator.pop(context);
-            });
+
           },
         ),
       );
