@@ -41,15 +41,27 @@ class ButtonsRow extends StatelessWidget {
   CircleButton keyButton() =>
       CircleButton(() => {}, true, Icons.vpn_key, Colors.white38);
 
+  File _image;
+  final picker = ImagePicker();
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    _image = File(pickedFile.path);
+
+  }
+
   VoidCallback selectImage(var context) {
     return () {
-      ImagePicker.pickImage(source: ImageSource.camera)
-          .then((image) => goAddPlace(context, image))
-          .catchError((onError) => print(onError));
+
+      getImage().then((value) => goAddPlace(context, _image));
+
+      // ImagePicker().getImage(source: ImageSource.camera)
+      //     .then((image) => goAddPlace(context, image))
+      //     .catchError((onError) => print(onError));
     };
   }
 
-  void goAddPlace(BuildContext context, File image) {
+  void goAddPlace(BuildContext context, var image) {
+    print("test");
     Navigator.push(
         context,
         MaterialPageRoute(
